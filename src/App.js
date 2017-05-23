@@ -9,9 +9,9 @@ class App extends Component {
     super()
     this.state = {
       things: {
-        0: {id: 0, name: '' },
-        1: {id: 1, name: 'Bread'},
-        2: {id: 2, name: 'Bibb lettuce'},
+         0: {id: 0, name: 'Milk' },
+        // 1: {id: 1, name: 'Bread'},
+        // 2: {id: 2, name: 'Bibb lettuce'},
         //access a given thing by using this.state.things['thing-1']
       },
       counter: 3,

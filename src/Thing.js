@@ -5,8 +5,9 @@ const Thing = ({ thing }) => {
         <li className="Thing">
             <input type="checkbox" value="on"/>
           <div className="details">
-            <div className="name">
-                {getName(thing.name)}
+            <div className="name" contentEditable="true" data-text="Enter Thing Here">
+                {/*{getName(thing.name)}*/}
+                {thing.name}
             </div>
             <span className="actions">
               <button className="remove">
@@ -18,11 +19,11 @@ const Thing = ({ thing }) => {
     )
 }
 
-function getName(name) {
-    if(name.length > 0){
-        return name
-    }else{
-        return "<Enter Thing>"
-    }
-}
+// function getName(name) {
+//     if(name.length > 0){
+//         return name
+//     }else{
+//         return "<Enter Thing>"
+//     }
+// }
 export default Thing

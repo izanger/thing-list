@@ -69,3 +69,9 @@ input[type="checkbox"] {
 .actions button.remove:hover {
   color: #AD343E;
 }
+
+/* StackOverflow voodoo magic - thanks Joke_Sense10 */
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-text);
+    color: #e1e8e2;
+}
