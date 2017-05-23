@@ -13,11 +13,15 @@ class App extends Component {
     }
   }
 
+  addThing() {
+    //bind this, use it in Thing.js - see line 24
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
-        <ThingList things={this.state.things}/>
+        <ThingList things={this.state.things} addThing={this.addThing}/>
       </div>
     );
   }
