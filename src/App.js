@@ -5,25 +5,35 @@ import ThingList from './ThingList'
 import Buttons from './Buttons'
 
 class App extends Component {
-  state = {
-    things: {
-      'thing-1': {id: 'thing-1', name: 'Milk' },
-      'thing-2': {id: 'thing-2', name: 'Bread'},
-      'thing-3': {id: 'thing-3', name: 'Bibb lettuce'},
-      //access a given thing by using this.state.things['thing-1']
+  constructor(){
+    super()
+    this.state = {
+      things: {
+        0: {id: 0, name: '' },
+        1: {id: 1, name: 'Bread'},
+        2: {id: 2, name: 'Bibb lettuce'},
+        //access a given thing by using this.state.things['thing-1']
+      },
+      counter: 3,
     }
+    this.addThing = this.addThing.bind(this)
   }
 
-  addThing() {
-    //bind this, use it in Thing.js - see line 24
+  addThing(ev) {
+    //bind this, use it in Thing.js
+    const state = {...this.state}
+    let c = this.state.counter
+    state.things[c] = {id: c, name: ''}
+    state.counter++
+    this.setState(state)
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <Buttons />
-        <ThingList things={this.state.things} addThing={this.addThing}/>
+        <Buttons addThing={this.addThing}/>
+        <ThingList things={this.state.things} />
       </div>
     );
   }

@@ -5,7 +5,7 @@ const Buttons = (props) => {
     return (
         <div>
             <button className="logout">Sign Out</button>
-            <button className="add-thing">Add Thing</button>
+            <button className="add-thing" onClick={props.addThing}>Add Thing</button>
         </div>
     )
 }
