@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './Thing.css'
 import Actions from './Actions'
-const Thing = (props) => {
+
+class Thing extends Component { 
+  render() {
     return (
         <li className="Thing">
             <input type="checkbox" value="on"/>
           <div className="details">
             <div className="name" contentEditable="true" data-text="Enter Thing Here">
                 {/*{getName(thing.name)}*/}
-                {props.thing.name}
+                {this.props.thing.name}
             </div>
-            <Actions thing={props.thing} deleteThing={props.deleteThing}/>
+            <Actions thing={this.props.thing} deleteThing={this.props.deleteThing}/>
           </div>
         </li>
     )
+  }
 }
 
 // function getName(name) {
