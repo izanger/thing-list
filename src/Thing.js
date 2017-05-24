@@ -1,5 +1,6 @@
 import React from 'react'
 import './Thing.css'
+import Actions from './Actions'
 const Thing = (props) => {
     return (
         <li className="Thing">
@@ -9,11 +10,7 @@ const Thing = (props) => {
                 {/*{getName(thing.name)}*/}
                 {props.thing.name}
             </div>
-            <span className="actions">
-              <button className="remove" onClick={props.deleteThing} data-id={props.thing.id}>
-                <i className="fa fa-trash-o" data-id={props.thing.id}></i>
-              </button>
-            </span>
+            <Actions thing={props.thing} deleteThing={props.deleteThing}/>
           </div>
         </li>
     )
